@@ -37,3 +37,28 @@ test-csim*   Tests your cache simulator
 test-trans.c Tests your transpose function
 tracegen.c   Helper program used by test-trans
 traces/      Trace files used by test-csim.c
+
+
+接下来是本人有关于题目的相关题解：
+先发出相关结果：
+总分53，得到53分
+
+
+partA:制作一个cache_simulator
+
+注意getopt的用法和cache如何进行更替，以及LRU的用法。
+
+partB:优化矩阵转置
+32*32即只要分割成8*8的矩阵则可以分数符合要求。
+64*64:是实验中最难的一部分，本题还是以8*8的矩阵为例
+把8*8的矩阵分成两个4*8的矩阵，再分别给予后面的两个block
+最后能再同一个矩阵B中做转置，以此来减少冲突。
+具体可见：
+https://github.com/LibraSkywalker/CacheLab
+
+61*67:
+即只要尝试出一种最合适的block尺寸就好，尝试出来的矩阵为16*16
+61*67的要是比较低的。
+CSAPP的实验真是一个比一个开始难起来
+虽然从汇编跳到了C语言，但是难度依然不减
+
